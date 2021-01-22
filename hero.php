@@ -6,7 +6,7 @@
 			if (strlen($headers['Authorization']) === 32){
 				include 'authorized.php';
 				if (in_array($headers['Authorization'], $authorizedUsers)){
-					$heroesFile = json_decode(file_get_contents('../../../PotatoBot v3/data/heroes.json'));
+					$heroesFile = json_decode(file_get_contents('../../../PotatoBot v3/data/heroes.json'), true);
 					$body = file_get_contents('php://input');
 					if (in_array($body, $heroesFile['list'])){
 						http_response_code(200);
