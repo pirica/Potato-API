@@ -1,0 +1,38 @@
+@font-face {
+	font-family: "Andale";
+	src: url("fonts/andale.ttf");
+}
+@font-face {
+	font-family: "Whitney";
+	src: url("fonts/whitney.ttf");
+}
+.code {
+	border: 5px solid #202020;
+	font-family: "Andale", "Arial";
+	padding: 5px;
+}
+.header {
+	color: #FF9347;
+}
+.method {
+	color: rgb(50, 205, 50);
+}
+.smallCode {
+	background-color: #202020;
+	border-radius: 10px;
+	font-family: "Andale", "Arial";
+	padding: 5px;
+}
+.url {
+	color: #268BD2;
+}
+body {
+	background-color: #303030;
+	color: white;
+	font-family: "Whitney", "Arial";
+}
+hr {
+	background-color: #404040;
+	border: none;
+	height: 5px;
+}
