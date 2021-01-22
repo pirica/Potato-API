@@ -5,16 +5,8 @@
 	</head>
 	<body>
 		<?php
-			function addEndpoint($method, $endpoint, $headers, $payload = null){
-				echo '<p class="code"><span class="method">'.$method.'</span> <span class="url">http://baked.potatoheads.net/api/'.$endpoint.'</span> HTTP/1.1';
-				foreach ($headers as $hTitle => $hValue){
-					echo '<br><span class="header">'.$hTitle.'</span>: '.$hValue;
-				}
-				if ($payload){
-					echo '<br><br>'.$payload;
-				}
-				echo '</p><hr>';
-			}
+			require 'api_template.php';
+			setRoot('http://baked.potatoheads.net/api/');
 
 			echo '<h1>Send Information to Server</h1>This allows you to send information to me. If you wish to apply for authorization, use the category <span class="smallCode">application</span>. Response code should be <span class="smallCode">204</span> if successful.';
 			addEndpoint('POST', 'post.php', [
@@ -35,7 +27,7 @@
 			], '{imageName}');
 
 			echo '<h1>Get an image without headers</h1>This will return a png of any image. <span class="smallCode">imageCategory</span> must be an item from the previous list.<br>Bot: PotatoBot';
-			addEndpoint('GET', 'imagenh.php?category={imageCategory}&name={imageName}', []);
+			addEndpoint('GET', 'imagenh.php?category={imageCategory}&name={imageName}');
 
 			echo '<h1>Get User-Friendly names from a Template ID</h1>This will return a json object with template IDs as keys and their user-friendly names as values. Credit to <span class="smallCode">amrsatrio</span> for helping with turning this into a full list.<br>Bot: Fortnite Daily';
 			addEndpoint('GET', 'items.php', [
